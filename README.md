@@ -40,4 +40,5 @@ bash script/run_few_shot_bert_prefix_sen_cls.sh 0 10 sst2 1000
 
 ## Result
 
-![conll03](results/conll03.png) ![wikiner](results/wikiner.png) ![sst2](results/sst2.png) ![rt](results/rt.png)
+![conll03](results/conll03.png){ width=50% } ![wikiner](results/wikiner.png){ width=50% }
+![sst2](results/sst2.png){ width=50% } ![rt](results/rt.png){ width=50% }
