@@ -1,0 +1,14 @@
+train_path: C4_train_page.txt
+dev_path: C4_dev_page.txt
+batch_size: 72
+checkpoint_every_step: 5000
+gradient_accumulation_steps: 1
+prefix_length: 5
+prefix_set_number: 1
+lm_type: t5-large
+tokenizer_type: t5-large
+num_training_steps: 100000
+pre_training_modes:
+  - webpage_syn_keyword
+learning_rate: 5e-5
+max_length: 150

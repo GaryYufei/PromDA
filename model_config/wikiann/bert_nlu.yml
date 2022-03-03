@@ -1,0 +1,13 @@
+batch_size: 8
+val_batch_size: 50
+adam_epsilon: 1e-8
+learning_rate: 5e-5
+weight_decay: 5e-6
+checkpoint_every_step: 400
+num_training_steps: 4000
+max_epoch: 30
+warmup_step: 20
+lm_type: bert-base-cased
+label_path: NLU_training_dataset/wikiner/labels.txt
+dev_path: NLU_training_dataset/wikiner/valid_whole.txt
+test_path: NLU_training_dataset/wikiner/test_whole.txt
