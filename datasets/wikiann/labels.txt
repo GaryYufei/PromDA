@@ -1,0 +1,7 @@
+B-Location
+B-Organization
+B-Person
+I-Location
+I-Organization
+I-Person
+O
