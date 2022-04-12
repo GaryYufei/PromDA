@@ -30,12 +30,12 @@ We also provide the checkpoint that we used in the paper [here](https://drive.go
 
 To run the full data augmentation experiments, please follow below instructuins:
 # Sequence Labelling Tasks
-To run the wikiann experiments on the first GPU under the shot-10 setting, please run
+To run the wikiann experiments on the first GPU under the shot-10 setting using random seed `18`, please run
 ```bash
-bash script/run_few_shot_bert_prefix.sh 0 10 wikiann 1000
+bash script/run_few_shot_bert_prefix.sh 0 18 10 wikiann 1000
 ```
 # Sentence Classification Tasks
-To run the sst2 experiments on the first GPU under the shot-10 setting, please run
+To run the sst2 experiments on the first GPU under the shot-10 setting using random seed `18`, please run
 ```bash
-bash script/run_few_shot_bert_prefix_sen_cls.sh 0 10 sst2 1000
+bash script/run_few_shot_bert_prefix_sen_cls.sh 0 18 10 sst2 1000
 ```
