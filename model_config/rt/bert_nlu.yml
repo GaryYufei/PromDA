@@ -11,3 +11,4 @@ lm_type: bert-base-uncased
 label_path: NLU_training_dataset/rt/labels.txt
 dev_path: NLU_training_dataset/rt/valid_whole.txt
 test_path: NLU_training_dataset/rt/test_whole.txt
+enable_sentence_classification: True
