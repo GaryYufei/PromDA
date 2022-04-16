@@ -309,6 +309,21 @@ if __name__ == "__main__":
 	else:
 		tokenizer, model = t5_model.get_t5_model(_C)
 
+	if _A.start_from_checkpoint is not None:
+		model.load_state_dict(torch.load(os.path.join(_A.start_from_checkpoint, 'model-best.pth'), map_location=torch.device('cpu'))['model'], strict=False)
+
+	if old_prefix_set_number > 1 and _C.load_from_pretrained:
+		model.update_prefix_embedding(old_prefix_set_number)
+
+	total_parameter_count = 0
+	trainable_parameter_count = 0
+	for p in model.parameters():
+		total_parameter_count += p.numel()
+		if p.requires_grad:
+			trainable_parameter_count += p.numel()
+	print('Total Parameter Count %d' % total_parameter_count)
+	print('Trainable Parameter Count %d' % trainable_parameter_count)
+
 	print(_C)
 	for arg in vars(_A):
 		print("{:<20}: {}".format(arg, getattr(_A, arg)))
@@ -324,21 +339,6 @@ if __name__ == "__main__":
 	else:
 		test_data = NLGMixDataset(_C, _C.test_path, tokenizer, label_index)
 	test_loader = nlg_get_data_loader(_C, test_data, _C.batch_size, shuffle=False)
-
-	if _A.start_from_checkpoint is not None:
-		model.load_state_dict(torch.load(os.path.join(_A.start_from_checkpoint, 'model-best.pth'), map_location=torch.device('cpu'))['model'], strict=False)
-
-	if old_prefix_set_number > 1 and _C.load_from_pretrained:
-		model.update_prefix_embedding(old_prefix_set_number)
-
-	total_parameter_count = 0
-	trainable_parameter_count = 0
-	for p in model.parameters():
-		total_parameter_count += p.numel()
-		if p.requires_grad:
-			trainable_parameter_count += p.numel()
-	print('Total Parameter Count %d' % total_parameter_count)
-	print('Trainable Parameter Count %d' % trainable_parameter_count)
 
 	model.parallelize()
 
