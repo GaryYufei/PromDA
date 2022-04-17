@@ -168,16 +168,6 @@ def evaluation(config, eval_data, model, label_list, label_index, device, show_d
 	for key in iSen2gt:
 		iSen2gt[key] = list(set(iSen2gt[key]))
 
-	with open('output_case_study.txt', 'w') as out:
-		for i_sen in iSen2oSen:
-			out.write(i_sen + '\n===============\n')
-			for s in iSen2gt[i_sen]:
-				out.write(s + '\n')
-			out.write('===============\n')
-			for s in iSen2oSen[i_sen]:
-				out.write(s + '\n')
-			out.write('\n')
-
 	bio_labels = []
 	bio_words = []
 	new_F = 0
@@ -314,6 +304,7 @@ if __name__ == "__main__":
 
 	if old_prefix_set_number > 1 and _C.load_from_pretrained:
 		model.update_prefix_embedding(old_prefix_set_number)
+		_C.prefix_set_number = old_prefix_set_number
 
 	total_parameter_count = 0
 	trainable_parameter_count = 0
