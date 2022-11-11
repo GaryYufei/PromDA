@@ -1,4 +1,4 @@
-# Prompt-based Data Augmentation for Low-Resource NLU Tasks
+# Prompt-based Data Augmentation for Low-Resource NLU Tasks #
 
 This repository is the official implementation of [PromDA: Prompt-based Data Augmentation for Low-Resource NLU Tasks](https://arxiv.org/abs/2202.12499). 
 
