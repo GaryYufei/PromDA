@@ -22,7 +22,7 @@ We need to do the Prompt Pre-training, please run:
 ```python
 python pre_train_t5.py --config model_config/pre_train_keyword_pt.yml --serialization-dir pretrain_web_page_keyword_t5_short --train
 ```
-In a Nvidia A100 GPU, it takes about 24 hours to complete.
+In a Nvidia A100 GPU, it takes about 24 hours to complete the pre-training.
 
 We also provide the checkpoint that we used in the paper [here](https://drive.google.com/drive/folders/1KYBqg7V2mk5MXma1g-vgBrSS_9JmIGtG?usp=sharing). Please put the file folder `pretrain_web_page_keyword_t5_short` in the root directory of this project.
 
